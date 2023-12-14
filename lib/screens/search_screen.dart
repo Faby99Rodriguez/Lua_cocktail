@@ -1,5 +1,5 @@
 import 'package:cocktail/models/cocktail_model.dart';
-import 'package:cocktail/providers/cock_provider.dart';
+import 'package:cocktail/services/cock_provider.dart';
 import 'package:cocktail/widgets/cocktail_card.dart';
 import 'package:flutter/material.dart';
 
@@ -51,7 +51,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 if (snapshot.connectionState == ConnectionState.waiting) {
                   return CircularProgressIndicator();
                 } else if (snapshot.hasError) {
-                  return Text('Error: ${snapshot.error}');
+                  return Text('No se encontraron resultados para: ${_searchController.text}');
                 } else {
                   return Expanded(
                     child: ListView.builder(

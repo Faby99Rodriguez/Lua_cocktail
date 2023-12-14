@@ -1,5 +1,5 @@
 import 'package:cocktail/models/cocktail_model.dart';
-import 'package:cocktail/providers/cock_provider.dart';
+import 'package:cocktail/services/cock_provider.dart';
 import 'package:cocktail/widgets/cocktail_card.dart';
 import 'package:flutter/material.dart';
 
