@@ -12,9 +12,9 @@ class CocktailCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Color.fromARGB(255, 88, 13, 7), // Puedes cambiar el color según tu preferencia
+      color: Color.fromARGB(255, 163, 136, 48), // Puedes cambiar el color según tu preferencia
       //color: Color.fromARGB(255, 2, 75, 88),
-      //elevation: 20, // Agrega sombra para resaltar el card
+      //elevation: 100, // Agrega sombra para resaltar el card
       child: InkWell(
         onTap: () {
           // Navegar a la pantalla de detalles cuando se hace clic

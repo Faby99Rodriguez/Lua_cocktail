@@ -1,6 +1,8 @@
 import 'package:cocktail/Pages/check_auth_screen.dart';
 import 'package:cocktail/Pages/login_screen.dart';
 import 'package:cocktail/Pages/register_screen.dart';
+import 'package:cocktail/providers/favorites_provider.dart';
+import 'package:cocktail/screens/favorites_screen.dart';
 import 'package:cocktail/services/cock_provider.dart';
 import 'package:cocktail/providers/login_form_provider.dart';
 import 'package:cocktail/screens/home_screen.dart';
@@ -18,6 +20,7 @@ class AppState extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
+        ChangeNotifierProvider(create: (_) => FavoritosProvider()),
         // ChangeNotifierProvider(
         //   create: (_) => Btd6Provider(),
         //   lazy: false,
@@ -42,12 +45,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-       initialRoute: 'login', // Puedes establecer la ruta inicial si lo deseas
+       initialRoute: 'checking', // Puedes establecer la ruta inicial si lo deseas
       routes: {
         'login': (context) => LoginScreen(),
         'register': (context) => RegisterScreen(),
         'home': (context) => HomeScreen(apiService: apiService),
-         'checking': (_) => CheckAuthScreen()
+        'checking': (_) => CheckAuthScreen(),
+        'favoritos': (context) => FavoritosScreen(),
       },
       scaffoldMessengerKey: NotificationsService.messengerKey,
           theme: ThemeData.light().copyWith(

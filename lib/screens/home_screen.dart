@@ -1,3 +1,4 @@
+import 'package:cocktail/screens/favorites_screen.dart';
 import 'package:cocktail/services/auth_services.dart';
 import 'package:flutter/material.dart';
 import 'package:cocktail/models/cocktail_model.dart';
@@ -54,15 +55,20 @@ class _HomeScreenState extends State<HomeScreen> {
           IconButton(
             icon: Icon(Icons.favorite),
             onPressed: () {
-              // Implementa la lógica para el botón de corazón aquí
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => FavoritosScreen(), // Asegúrate de pasar cualquier argumento necesario
+                ),
+              );// Implementa la lógica para el botón de corazón aquí
             },
           ),
-          IconButton(
-            icon: Icon(Icons.home),
-            onPressed: () {
-              // Implementa la lógica para el botón de inicio (home) aquí
-            },
-          ),
+          // IconButton(
+          //   icon: Icon(Icons.home),
+          //   onPressed: () {
+          //     // Implementa la lógica para el botón de inicio (home) aquí
+          //   },
+          // ),
         ],
       ),
       body: Container(
